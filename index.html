@@ -1,90 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-    <title>iPhone Story</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #000;
-            color: white;
-            scroll-behavior: smooth;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iPhone Story</title>
 
-        nav {
-            position: fixed;
-            width: 100%;
-            background: rgba(0,0,0,0.8);
-            padding: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 500;
-        }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #000;
+    color: white;
+    scroll-behavior: smooth;
+}
 
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 50px;
-            font-weight: bold;
-            background: linear-gradient(to bottom, #000, #111);
-            animation: fadeIn 2s ease-in-out;
-        }
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
 
-        section {
-            padding: 100px 20px;
-            text-align: center;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
 
-        .iphone-img {
-            width: 300px;
-            transition: transform 0.5s;
-        }
+nav a:hover {
+    color: #999;
+}
 
-        .iphone-img:hover {
-            transform: scale(1.1);
-        }
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #000, #111);
+}
 
-        .button {
-            background: white;
-            color: black;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+.hero h1 {
+    font-size: 60px;
+    animation: fadeIn 2s ease-in-out;
+}
 
-        .button:hover {
-            background: gray;
-        }
+.hero p {
+    font-size: 22px;
+    color: #aaa;
+    margin-top: 20px;
+    animation: fadeIn 3s ease-in-out;
+}
 
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
+.section {
+    padding: 100px 20px;
+    text-align: center;
+}
 
-        .fade {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: 1s;
-        }
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    transition: 0.5s;
+}
 
-        .fade.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+.card:hover {
+    transform: scale(1.03);
+}
+
+.iphone-img {
+    width: 300px;
+    margin-top: 20px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.iphone-img:hover {
+    transform: scale(1.1);
+}
+
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 35px;
+    border-radius: 30px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #ccc;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.fade {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1.2s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
 </head>
 
 <body>
@@ -92,42 +131,74 @@
 <nav>
     <a href="#home">Home</a>
     <a href="#storia">Storia</a>
+    <a href="#evoluzione">Evoluzione</a>
     <a href="#modelli">Modelli</a>
 </nav>
 
-<header id="home">
-    iPhone Story 📱
-    <p style="font-size:20px; font-weight:normal;">La rivoluzione tecnologica dal 2007</p>
-</header>
-
-<section id="storia" class="fade">
-    <h2>Il primo iPhone</h2>
-    <p>Presentato nel 2007, ha cambiato per sempre il mondo degli smartphone.</p>
-    <img class="iphone-img" src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35c1">
+<section class="hero" id="home">
+    <h1>iPhone Story 📱</h1>
+    <p>La rivoluzione tecnologica dal 2007</p>
 </section>
 
-<section id="modelli" class="fade">
-    <h2>Evoluzione Continua</h2>
-    <p>Design innovativo, fotocamere avanzate e potenza incredibile.</p>
-    <img class="iphone-img" src="https://images.unsplash.com/photo-1512499617640-c2f999098c01">
-    <br><br>
-    <a href="#" class="button">Scopri di più</a>
+<section class="section fade" id="storia">
+    <div class="card">
+        <h2>Il Primo iPhone</h2>
+        <p>Presentato nel 2007, ha cambiato per sempre il mondo degli smartphone.</p>
+        <img class="iphone-img" src="iphone4.jpg" alt="Primo iPhone">
+    </div>
+</section>
+
+<section class="section fade" id="evoluzione">
+    <div class="card">
+        <h2>Evoluzione Continua</h2>
+        <p>Design innovativo, fotocamere avanzate e potenza incredibile.</p>
+        <img class="iphone-img" src="iphone6.jpg" alt="iPhone moderno">
+        <br><br>
+        <a href="#" class="button">Scopri di più</a>
+    </div>
+</section>
+
+<section class="section fade" id="modelli">
+    <h2>Modelli iPhone</h2>
+
+    <div class="card">
+        <h3>iPhone 4 (2010)</h3>
+        <img class="iphone-img" src="iphone4.jpg" alt="iPhone 4">
+        <p>Design compatto con display Retina, prima vera evoluzione del design Apple.</p>
+    </div>
+
+    <div class="card">
+        <h3>iPhone 6 (2014)</h3>
+        <img class="iphone-img" src="iphone6.jpg" alt="iPhone 6">
+        <p>Schermo più grande, design sottile, introduzione Apple Pay.</p>
+    </div>
+
+    <div class="card">
+        <h3>iPhone X (2017)</h3>
+        <img class="iphone-img" src="iphonex.jpg" alt="iPhone X">
+        <p>Design tutto schermo, Face ID e fotocamera avanzata.</p>
+    </div>
+
+    <div class="card">
+        <h3>iPhone 12 (2020)</h3>
+        <img class="iphone-img" src="iphone12.jpg" alt="iPhone 12">
+        <p>Ritorno ai bordi squadrati, display OLED e connettività 5G.</p>
+    </div>
+
 </section>
 
 <script>
-    const faders = document.querySelectorAll('.fade');
+const faders = document.querySelectorAll('.fade');
 
-    window.addEventListener('scroll', () => {
-        const triggerBottom = window.innerHeight * 0.8;
-
-        faders.forEach(fade => {
-            const boxTop = fade.getBoundingClientRect().top;
-
-            if(boxTop < triggerBottom) {
-                fade.classList.add('show');
-            }
-        });
+window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight * 0.8;
+    faders.forEach(fade => {
+        const boxTop = fade.getBoundingClientRect().top;
+        if(boxTop < triggerBottom) {
+            fade.classList.add('show');
+        }
     });
+});
 </script>
 
 </body>
