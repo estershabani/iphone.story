@@ -6,19 +6,13 @@
 <title>iPhone Story</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background: #000;
     color: white;
     scroll-behavior: smooth;
 }
-
 nav {
     position: fixed;
     width: 100%;
@@ -28,7 +22,6 @@ nav {
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
-
 nav a {
     color: white;
     text-decoration: none;
@@ -36,10 +29,7 @@ nav a {
     font-weight: 500;
     transition: 0.3s;
 }
-
-nav a:hover {
-    color: #999;
-}
+nav a:hover { color: #999; }
 
 .hero {
     height: 100vh;
@@ -50,24 +40,10 @@ nav a:hover {
     flex-direction: column;
     background: linear-gradient(to bottom, #000, #111);
 }
+.hero h1 { font-size: 60px; animation: fadeIn 2s ease-in-out; }
+.hero p { font-size: 22px; color: #aaa; margin-top: 20px; animation: fadeIn 3s ease-in-out; }
 
-.hero h1 {
-    font-size: 60px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-.hero p {
-    font-size: 22px;
-    color: #aaa;
-    margin-top: 20px;
-    animation: fadeIn 3s ease-in-out;
-}
-
-.section {
-    padding: 100px 20px;
-    text-align: center;
-}
-
+.section { padding: 100px 20px; text-align: center; }
 .card {
     background: rgba(255,255,255,0.05);
     padding: 40px;
@@ -76,21 +52,10 @@ nav a:hover {
     margin: 40px auto;
     transition: 0.5s;
 }
+.card:hover { transform: scale(1.03); }
 
-.card:hover {
-    transform: scale(1.03);
-}
-
-.iphone-img {
-    width: 300px;
-    margin-top: 20px;
-    border-radius: 20px;
-    transition: 0.5s;
-}
-
-.iphone-img:hover {
-    transform: scale(1.1);
-}
+.iphone-img { width: 300px; margin-top: 20px; border-radius: 20px; transition: 0.5s; }
+.iphone-img:hover { transform: scale(1.1); }
 
 .button {
     display: inline-block;
@@ -103,26 +68,12 @@ nav a:hover {
     font-weight: bold;
     transition: 0.3s;
 }
+.button:hover { background: #ccc; }
 
-.button:hover {
-    background: #ccc;
-}
+@keyframes fadeIn { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
 
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-.fade {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 1.2s ease;
-}
-
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+.fade { opacity: 0; transform: translateY(50px); transition: 1.2s ease; }
+.fade.show { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 
@@ -144,7 +95,7 @@ nav a:hover {
     <div class="card">
         <h2>Il Primo iPhone</h2>
         <p>Presentato nel 2007, ha cambiato per sempre il mondo degli smartphone.</p>
-        <img class="iphone-img" src="iphone4.jpg" alt="Primo iPhone">
+        <img class="iphone-img" src="images/iphone4.jpg" alt="Primo iPhone">
     </div>
 </section>
 
@@ -152,7 +103,7 @@ nav a:hover {
     <div class="card">
         <h2>Evoluzione Continua</h2>
         <p>Design innovativo, fotocamere avanzate e potenza incredibile.</p>
-        <img class="iphone-img" src="iphone6.jpg" alt="iPhone moderno">
+        <img class="iphone-img" src="images/iphone6.jpg" alt="iPhone moderno">
         <br><br>
         <a href="#" class="button">Scopri di più</a>
     </div>
@@ -163,25 +114,25 @@ nav a:hover {
 
     <div class="card">
         <h3>iPhone 4 (2010)</h3>
-        <img class="iphone-img" src="iphone4.jpg" alt="iPhone 4">
+        <img class="iphone-img" src="images/iphone4.jpg" alt="iPhone 4">
         <p>Design compatto con display Retina, prima vera evoluzione del design Apple.</p>
     </div>
 
     <div class="card">
         <h3>iPhone 6 (2014)</h3>
-        <img class="iphone-img" src="iphone6.jpg" alt="iPhone 6">
+        <img class="iphone-img" src="images/iphone6.jpg" alt="iPhone 6">
         <p>Schermo più grande, design sottile, introduzione Apple Pay.</p>
     </div>
 
     <div class="card">
         <h3>iPhone X (2017)</h3>
-        <img class="iphone-img" src="iphonex.jpg" alt="iPhone X">
+        <img class="iphone-img" src="images/iphonex.jpg" alt="iPhone X">
         <p>Design tutto schermo, Face ID e fotocamera avanzata.</p>
     </div>
 
     <div class="card">
         <h3>iPhone 12 (2020)</h3>
-        <img class="iphone-img" src="iphone12.jpg" alt="iPhone 12">
+        <img class="iphone-img" src="images/iphone12.jpg" alt="iPhone 12">
         <p>Ritorno ai bordi squadrati, display OLED e connettività 5G.</p>
     </div>
 
@@ -189,14 +140,11 @@ nav a:hover {
 
 <script>
 const faders = document.querySelectorAll('.fade');
-
 window.addEventListener('scroll', () => {
     const triggerBottom = window.innerHeight * 0.8;
     faders.forEach(fade => {
         const boxTop = fade.getBoundingClientRect().top;
-        if(boxTop < triggerBottom) {
-            fade.classList.add('show');
-        }
+        if(boxTop < triggerBottom) fade.classList.add('show');
     });
 });
 </script>
