@@ -1,116 +1,134 @@
 <!DOCTYPE html>
-<html lang="it">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <title>iPhone Story</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPhone Story - iPhone Originali a Prezzi Accessibili</title>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #000;
             color: white;
-            padding: 60px 20px;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(0,0,0,0.8);
+            padding: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            font-weight: bold;
+            background: linear-gradient(to bottom, #000, #111);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        section {
+            padding: 100px 20px;
             text-align: center;
         }
-        
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+
+        .iphone-img {
+            width: 300px;
+            transition: transform 0.5s;
         }
-        
-        header p {
-            font-size: 1.2em;
-            opacity: 0.95;
+
+        .iphone-img:hover {
+            transform: scale(1.1);
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-        
-        .feature-card {
+
+        .button {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            color: black;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
         }
-        
-        .feature-card h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.3em;
+
+        .button:hover {
+            background: gray;
         }
-        
-        .feature-card p {
-            color: #666;
-            line-height: 1.8;
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
         }
-        
-        .icon {
-            font-size: 2.5em;
-            margin-bottom: 15px;
+
+        .fade {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s;
         }
-        
-        footer {
-            background: #f8f9fa;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-            border-top: 1px solid #ddd;
-            color: #666;
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>📱 iPhone Story</h1>
-        <p>iPhone Originali a Prezzi Accessibili per Tutti</p>
-    </header>
-    
-    <div class="container">
-        <div class="features">
-            <div class="feature-card">
-                <div class="icon">✅</div>
-                <h3>100% Originali</h3>
-                <p>Tutti i nostri iPhone provengono direttamente dalla fabbrica. Nessun ricondizionato, solo prodotti autentici e garantiti.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="icon">💰</div>
-                <h3>Prezzi Accessibili</h3>
-                <p>Offriamo i migliori prezzi sul mercato, rendendo gli iPhone accessibili a tutti senza compromessi sulla qualità.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="icon">🏭</div>
-                <h3>Direttamente dalla Fabbrica</h3>
-                <p>Ci affidiamo solo ai migliori fornitori per garantire l'originalità e la qualità di ogni dispositivo.</p>
-            </div>
-        </div>
-    </div>
-    
-    <footer>
-        <p>&copy; 2026 iPhone Story. Tutti i diritti riservati.</p>
-    </footer>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#storia">Storia</a>
+    <a href="#modelli">Modelli</a>
+</nav>
+
+<header id="home">
+    iPhone Story 📱
+    <p style="font-size:20px; font-weight:normal;">La rivoluzione tecnologica dal 2007</p>
+</header>
+
+<section id="storia" class="fade">
+    <h2>Il primo iPhone</h2>
+    <p>Presentato nel 2007, ha cambiato per sempre il mondo degli smartphone.</p>
+    <img class="iphone-img" src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35c1">
+</section>
+
+<section id="modelli" class="fade">
+    <h2>Evoluzione Continua</h2>
+    <p>Design innovativo, fotocamere avanzate e potenza incredibile.</p>
+    <img class="iphone-img" src="https://images.unsplash.com/photo-1512499617640-c2f999098c01">
+    <br><br>
+    <a href="#" class="button">Scopri di più</a>
+</section>
+
+<script>
+    const faders = document.querySelectorAll('.fade');
+
+    window.addEventListener('scroll', () => {
+        const triggerBottom = window.innerHeight * 0.8;
+
+        faders.forEach(fade => {
+            const boxTop = fade.getBoundingClientRect().top;
+
+            if(boxTop < triggerBottom) {
+                fade.classList.add('show');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
